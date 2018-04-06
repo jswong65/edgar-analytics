@@ -77,7 +77,7 @@ def process_log(log_path, inactive_period_path, output_path):
 
 if __name__ == "__main__":
     argvs = sys.argv
-    if len(argvs) < 5:
+    if len(argvs) < 4:
         raise Exception("Not enough arguments")    
 
     log_path, inactive_period_path, output_path = argvs[1:]
