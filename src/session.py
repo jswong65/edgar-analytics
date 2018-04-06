@@ -1,4 +1,7 @@
 class Session(object):
+    """
+    This class is used to store related information of a session
+    """
     def __init__(self, ip, init_time):
         self.__ip = ip
         self.__init_time = init_time
@@ -25,15 +28,23 @@ class Session(object):
     def count(self):
         return self.__count
 
-    # increment the count value by 1
     def increment_count(self):
+        """ 
+        increment the count value by 1 
+        """
         self.__count += 1
 
-    # calculate the duration of a session
     def __duration_cal(self):
+        """ 
+        calculate the duration of a session 
+        """
         return int((self.__last_request_time - self.__init_time).total_seconds()) + 1 
 
+    
     def get_output(self):
+        """
+        return the desired output format for writing the session to a file
+        """
         return "{},{},{},{},{}\n".format(
                                 self.__ip,
                                 self.__init_time.strftime('%Y-%m-%d %H:%M:%S'),

@@ -1,8 +1,14 @@
+import sys
+sys.path.append('../')
+
 import unittest
 import datetime
 from session import Session
 
 class TestSession(unittest.TestCase):
+    """
+    Unit test for Session class
+    """
 
     def setUp(self):
         self.session_1 = Session("1.1.1.1", datetime.datetime(2017, 12, 31, 23, 59, 59))
@@ -42,7 +48,9 @@ class TestSession(unittest.TestCase):
         self.assertEqual(self.session_2.count, 3)
 
     def test_get_output(self):
-
+        """
+        test get_output function
+        """
         init_time_1 = datetime.datetime(2017, 12, 31, 23, 59, 59)
         init_time_2 = datetime.datetime(2018, 1, 1, 0, 0, 0)
         last_request_time_1 = datetime.datetime(2018, 1, 1, 1, 1, 1)

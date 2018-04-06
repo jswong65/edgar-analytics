@@ -1,10 +1,18 @@
+import sys
+sys.path.append('../')
+
 import unittest
 import datetime
 from utils import convert_datetime, time_diff
 
 class TestUtils(unittest.TestCase):
-    
+    """
+    Unit test for untility functions
+    """
     def test_convert_datetime(self):
+        """
+        Test test_convert function
+        """
         # test the first second of an year
         dt = convert_datetime("2017-01-01", "00:00:00")
         self.assertEqual(datetime.datetime(2017,1,1,0,0,0), dt)
@@ -20,6 +28,9 @@ class TestUtils(unittest.TestCase):
 
 
     def test_time_diff(self):
+        """
+        Test time_diff function
+        """
         # test difference in seconds
         dt1 = convert_datetime("2017-01-01", "00:00:00")
         dt2 = convert_datetime("2017-01-01", "00:00:02")
