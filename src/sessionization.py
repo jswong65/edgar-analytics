@@ -32,8 +32,6 @@ def process_log(log_path, inactive_period_path, output_path):
 
             for line in r:
                 fields = line.split(",")
-                if len(fields) != 15: 
-                    continue
 
                 ip = fields[0]
                 # if a new date time is identified
