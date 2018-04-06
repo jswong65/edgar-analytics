@@ -77,9 +77,12 @@ def process_log(log_path, inactive_period_path, output_path):
 
 if __name__ == "__main__":
     argvs = sys.argv
+    if len(argvs) < 5:
+        raise Exception("Not enough arguments")    
+
     log_path, inactive_period_path, output_path = argvs[1:]
 
     start_time = time.time()  
     process_log(log_path, inactive_period_path, output_path)      
     elapsed_time = time.time() - start_time
-    print("completed in seconds: {}s".format(round(elapsed_time), 2))
+    print("completed in {}s".format(round(elapsed_time), 2))
